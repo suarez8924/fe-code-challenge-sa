@@ -1,0 +1,70 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.repository-details {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: 1fr 1fr;
+  justify-content: center;
+  grid-template-areas:
+    "repository-details repository-details repository-details language"
+    "repository-details repository-details repository-details stars";
+  background-color: $colorWhite;
+  padding: 2rem;
+  border-radius: 1rem;
+  min-height: 13rem;
+
+  .details-container {
+    grid-area: repository-details;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .repository-name {
+  }
+
+  .description {
+    margin: 1rem 0 2rem;
+  }
+
+  .github-icon {
+    width: 3rem;
+    transition: fill 200ms ease-out;
+  }
+
+  .repository-link {
+    margin-top: auto;
+    &:hover {
+      .github-icon {
+        fill: red;
+      }
+    }
+  }
+
+  .language {
+    justify-self: end;
+  }
+
+  .stars-container {
+    grid-area: stars;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .star-icon {
+    width: 2.5rem;
+    transition: fill 300ms ease-out;
+    fill: red;
+
+    &.is-stared {
+      fill: yellow;
+    }
+  }
+
+  .star-count {
+    margin-left: 0.5rem;
+    text-align: center;
+  }
+}
