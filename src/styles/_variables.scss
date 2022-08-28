@@ -8,11 +8,11 @@ $desktopSidePadding: 4rem;
 
 // Site max widths
 $maxMobileWidth: 76.8rem;
-$maxTotalWidth: 144rem;
+$maxDesktopWidth: 144rem;
 
 // Media queries
-$screenSmall: '(min-width: 480px)';
-$screenMaxMedium: '(max-width: 767px)';
-$screenMedium: '(min-width: 768px)';
-$screenMaxLarge: '(max-width: 1023px)';
-$screenLarge: '(min-width: 1024px)';
+$screenSmall: "(min-width: 480px)";
+$screenMaxMedium: "(max-width: 767px)";
+$screenMedium: "(min-width: 768px)";
+$screenMaxLarge: "(max-width: 1023px)";
+$screenLarge: "(min-width: 1024px)";
