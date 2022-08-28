@@ -11,7 +11,7 @@ interface RepositoryDetailsProps {
   repositoryContent: Repository;
 }
 
-function RepositoryDetails(props: RepositoryDetailsProps) {
+const RepositoryDetails = (props: RepositoryDetailsProps) => {
   const {
     id,
     name,
@@ -57,6 +57,6 @@ function RepositoryDetails(props: RepositoryDetailsProps) {
       </div>
     </div>
   );
-}
+};
 
 export default RepositoryDetails;

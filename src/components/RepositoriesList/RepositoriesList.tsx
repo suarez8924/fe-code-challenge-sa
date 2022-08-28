@@ -5,7 +5,7 @@ import "./RepositoryList.scss";
 interface RepositoriesListProps {
   repositories: Array<Repository> | [];
 }
-function RepositoriesList(props: RepositoriesListProps) {
+const RepositoriesList = (props: RepositoriesListProps) => {
   const { repositories } = props;
   return (
     <>
@@ -24,6 +24,6 @@ function RepositoriesList(props: RepositoriesListProps) {
       )}
     </>
   );
-}
+};
 
 export default RepositoriesList;

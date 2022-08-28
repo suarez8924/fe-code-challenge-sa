@@ -10,13 +10,13 @@ interface PaginationProps {
   onPageChange: (page: number) => void;
 }
 
-function Pagination({
+const Pagination = ({
   className = "",
   itemCount,
   disabled,
   currentPage,
   onPageChange,
-}: PaginationProps) {
+}: PaginationProps) => {
   const totalPages = Math.ceil(itemCount / 30);
 
   const handlePageChange = (clickedNext: boolean) => {
@@ -62,6 +62,6 @@ function Pagination({
       )}
     </nav>
   );
-}
+};
 
 export default Pagination;
