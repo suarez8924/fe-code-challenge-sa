@@ -5,16 +5,28 @@ import Pagination from "./components/Pagination/Pagination";
 import RepositoriesList from "./components/RepositoriesList/RepositoriesList";
 import { Repository } from "./data/types";
 import useOneWeekAgoDate from "./hooks/useOneWeekAgoDate";
+import getStargazedRepositories from "./utils/getStargazedRepositories";
 
 function App() {
   const [repositories, setRepositories] = useState<Array<Repository> | []>([]);
   const [loading, setLoading] = useState(true);
   const [hasError, setHasError] = useState<Boolean>(false);
-  const [currentPage, setCurrentPage] = useState(32);
+  const [currentPage, setCurrentPage] = useState(1);
   const [totalItemCount, setTotalItemCount] = useState(0);
 
   const lastWeekDate = useOneWeekAgoDate();
 
+  useEffect(() => {
+    const stargazedRepositories = localStorage.getItem(
+      "stargazed-repositories",
+    );
+    if (!stargazedRepositories) {
+      localStorage.setItem(
+        "stargazed-repositories",
+        JSON.stringify({ repositoriesIds: [] }),
+      );
+    }
+  }, []);
   useEffect(() => {
     if (lastWeekDate) {
       setLoading(true);
@@ -24,6 +36,7 @@ function App() {
         .then((response) => response.json())
         .then((data) => {
           const { items, total_count: totalCount } = data;
+          const stargazedRepositoriesIds = getStargazedRepositories();
           console.log(data);
           const newRepositories = items.map(
             ({
@@ -40,8 +53,10 @@ function App() {
               name,
               description,
               stargazersCount: stargazers_count,
+              isStargazed: stargazedRepositoriesIds.includes(id),
             }),
           ) as Array<Repository>;
+
           setTotalItemCount(totalCount >= 1000 ? 1000 : totalCount);
           setRepositories(newRepositories);
           setLoading(false);
