@@ -1,4 +1,4 @@
-import { Repository, StargazedRepositories } from "../data/types";
+import { StargazedRepositories } from "../data/types";
 
 const saveStargazedRepositoryId = (repositoryId: number) => {
   const stargazedRepositories = localStorage.getItem("stargazed-repositories");
