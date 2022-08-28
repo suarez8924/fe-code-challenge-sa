@@ -4,8 +4,12 @@ import getStargazedRepositories from "../utils/getStargazedRepositories";
 import useOneWeekAgoDate from "./useOneWeekAgoDate";
 interface UseFetchRepositoriesProps {
   currentPage: number;
+  searchLanguage: string;
 }
-const useFetchRepositories = ({ currentPage }: UseFetchRepositoriesProps) => {
+const useFetchRepositories = ({
+  currentPage,
+  searchLanguage,
+}: UseFetchRepositoriesProps) => {
   const [repositories, setRepositories] = useState<Array<Repository> | []>([]);
   const [loading, setLoading] = useState(true);
   const [hasError, setHasError] = useState<Boolean>(false);
@@ -16,7 +20,7 @@ const useFetchRepositories = ({ currentPage }: UseFetchRepositoriesProps) => {
     if (lastWeekDate) {
       setLoading(true);
       fetch(
-        `https://api.github.com/search/repositories?q=created:>${lastWeekDate}&sort=stars&order=desc&page=${currentPage}`,
+        `https://api.github.com/search/repositories?q=created:>${lastWeekDate}+language:${searchLanguage}&sort=stars&order=desc&page=${currentPage}`,
       )
         .then((response) => response.json())
         .then((data) => {
@@ -51,7 +55,7 @@ const useFetchRepositories = ({ currentPage }: UseFetchRepositoriesProps) => {
           console.error(error);
         });
     }
-  }, [lastWeekDate, currentPage]);
+  }, [lastWeekDate, currentPage, searchLanguage]);
 
   return {
     repositories,
