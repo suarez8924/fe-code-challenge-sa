@@ -1,0 +1,22 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .pagination-button {
+    width: 2rem;
+    transition: opacity 150ms ease-in-out;
+
+    &[disabled] {
+      opacity: 0.2;
+    }
+  }
+
+  .next-button {
+    margin-left: 2rem;
+  }
+
+  .previous-button {
+    margin-right: 2rem;
+  }
+}
