@@ -1,3 +1,4 @@
+import { CSSProperties } from "react";
 import { Repository } from "../../data/types";
 import RepositoryDetails from "../RepositoryDetails/RepositoryDetails";
 import "./RepositoryList.scss";
@@ -12,11 +13,12 @@ const RepositoriesList = (props: RepositoriesListProps) => {
     <>
       {repositories.length > 0 ? (
         <ul data-testid="list">
-          {repositories.map((repository) => (
+          {repositories.map((repository, index) => (
             <li
               data-testid="list-item"
               key={repository.id}
               className="repository-item"
+              style={{ "--index": index } as CSSProperties}
             >
               <RepositoryDetails repositoryContent={repository} />
             </li>
