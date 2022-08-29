@@ -8,10 +8,12 @@
 
 html {
   font-size: 62.5%;
+
+  overflow-y: scroll;
 }
 
 body {
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -44,8 +46,10 @@ button,
 input {
   outline-width: 0.5rem;
   outline-offset: 0.5rem;
+  outline-color: $colorOrange;
 }
 
 svg {
   width: 100%;
+  color: currentColor;
 }

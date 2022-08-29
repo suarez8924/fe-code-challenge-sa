@@ -30,8 +30,10 @@ const RepositoryDetails = (props: RepositoryDetailsProps) => {
   return (
     <div className="repository-details">
       <div className="details-container">
-        <h2 className="repository-name">{name}</h2>
-        {description && <p className="description">{description}</p>}
+        <h2 className="heading-medium">{name}</h2>
+        {description && (
+          <p className="description paragraph-medium">{description}</p>
+        )}
         <a
           className="repository-link"
           href={htmlUrl}
@@ -41,9 +43,14 @@ const RepositoryDetails = (props: RepositoryDetailsProps) => {
           <GithubIcon className="github-icon" />
         </a>
       </div>
-      {language && <p className="language">{language}</p>}
+      {language && <p className="language paragraph-medium">{language}</p>}
       <div className="stars-container">
-        <button onClick={handleStarClick} disabled={isStargazed || clicked}>
+        <button
+          className="star-button"
+          onClick={handleStarClick}
+          disabled={isStargazed || clicked}
+          aria-label="Star repository"
+        >
           <StarIcon
             className={`star-icon ${
               isStargazed || clicked ? "is-stargazed" : ""
@@ -51,7 +58,7 @@ const RepositoryDetails = (props: RepositoryDetailsProps) => {
           />
         </button>
 
-        <p className="star-count">
+        <p className="star-count paragraph-small">
           {isStargazed || clicked ? stargazersCount + 1 : stargazersCount} stars
         </p>
       </div>

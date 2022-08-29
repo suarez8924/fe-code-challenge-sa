@@ -1,9 +1,15 @@
 import "./Loader.scss";
 
-const Loader = () => {
+interface LoaderProps {
+  className?: string;
+}
+const Loader = ({ className = "" }: LoaderProps) => {
   return (
-    <div data-testid="loader" className="loader">
-      <h2>LOADING...</h2>;
+    <div
+      data-testid="loader"
+      className={`loader-container heading-large ${className}`}
+    >
+      <h2>LOADING...</h2>
     </div>
   );
 };

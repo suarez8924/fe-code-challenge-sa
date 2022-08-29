@@ -9,10 +9,11 @@
   grid-template-areas:
     "repository-details repository-details repository-details language"
     "repository-details repository-details repository-details stars";
-  background-color: $colorWhite;
+  background-color: $colorDarkGrey;
   padding: 2rem;
   border-radius: 1rem;
   min-height: 13rem;
+  color: $colorAlmostWhite;
 
   .details-container {
     grid-area: repository-details;
@@ -21,15 +22,13 @@
     align-items: flex-start;
   }
 
-  .repository-name {
-  }
-
   .description {
     margin: 1rem 0 2rem;
   }
 
   .github-icon {
     width: 3rem;
+    fill: $colorAlmostWhite;
     transition: fill 200ms ease-out;
   }
 
@@ -37,13 +36,14 @@
     margin-top: auto;
     &:hover {
       .github-icon {
-        fill: red;
+        fill: $colorOrange;
       }
     }
   }
 
   .language {
     justify-self: end;
+    color: $colorOrange;
   }
 
   .stars-container {
@@ -53,18 +53,28 @@
     justify-content: flex-end;
   }
 
+  .star-button {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
   .star-icon {
     width: 2.5rem;
     transition: fill 300ms ease-out;
-    fill: red;
+    fill: transparent;
+    stroke: $colorAlmostWhite;
+    stroke-width: 2rem;
 
     &.is-stargazed {
-      fill: yellow;
+      fill: $colorOrange;
+      stroke-width: 0;
+      stroke: transparent;
     }
   }
 
   .star-count {
-    margin-left: 0.5rem;
+    margin-left: 1rem;
     text-align: center;
   }
 }

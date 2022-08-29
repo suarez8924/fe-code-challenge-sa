@@ -42,7 +42,9 @@ function App() {
   return (
     <main className="App">
       <header className="container header">
-        <h1 className="main-title">Top Repositories of the week</h1>
+        <h1 className="main-title heading-large">
+          Top Repositories of the week
+        </h1>
         {repositories.length > 0 && (
           <Pagination
             className="pagination"
@@ -61,7 +63,7 @@ function App() {
       </header>
       <section className="container app-container">
         {loading ? (
-          <Loader />
+          <Loader className="loader" />
         ) : (
           <RepositoriesList repositories={repositories} />
         )}

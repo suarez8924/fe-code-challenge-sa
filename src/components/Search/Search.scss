@@ -1,3 +1,5 @@
+@import "../../styles/variables";
+
 .search {
   display: flex;
   align-items: center;
@@ -5,9 +7,24 @@
 
   .search-input {
     margin-right: 2rem;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
   }
 
   .search-button {
     width: 2rem;
+
+    svg {
+      fill: $colorDarkGrey;
+      transition: fill 150ms ease-in-out;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      svg {
+        fill: $colorOrange;
+      }
+    }
   }
 }

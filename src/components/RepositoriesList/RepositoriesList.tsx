@@ -23,8 +23,8 @@ const RepositoriesList = (props: RepositoriesListProps) => {
           ))}
         </ul>
       ) : (
-        <div data-testid="not-found">
-          <h2>No elements found</h2>
+        <div data-testid="not-found" className="not-found">
+          <h2 className="heading-large">No elements found</h2>
         </div>
       )}
     </>

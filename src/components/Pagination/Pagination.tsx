@@ -46,7 +46,7 @@ const Pagination = ({
           <ChevronLeft />
         </button>
       )}
-      <p data-testid="page-count-display">
+      <p data-testid="page-count-display" className="paragraph-medium">
         {currentPage} of {totalPages}
       </p>
       {currentPage < totalPages && (

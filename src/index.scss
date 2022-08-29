@@ -1,6 +1,7 @@
 @import "./styles/variables";
 @import "./styles/mixins";
 @import "./styles/base";
+@import "./styles/types";
 
 .container {
   position: relative;
@@ -9,7 +10,7 @@
   max-width: $maxMobileWidth;
   margin: 0 auto;
 
-  @media #{$screenMaxLarge} {
+  @media #{$screenLarge} {
     max-width: $maxDesktopWidth;
     padding: 0 $desktopSidePadding;
   }
