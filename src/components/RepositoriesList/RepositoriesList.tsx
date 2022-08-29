@@ -7,18 +7,23 @@ interface RepositoriesListProps {
 }
 const RepositoriesList = (props: RepositoriesListProps) => {
   const { repositories } = props;
+
   return (
     <>
       {repositories.length > 0 ? (
-        <ul>
+        <ul data-testid="list">
           {repositories.map((repository) => (
-            <li key={repository.id} className="repository-item">
+            <li
+              data-testid="list-item"
+              key={repository.id}
+              className="repository-item"
+            >
               <RepositoryDetails repositoryContent={repository} />
             </li>
           ))}
         </ul>
       ) : (
-        <div>
+        <div data-testid="not-found">
           <h2>No elements found</h2>
         </div>
       )}

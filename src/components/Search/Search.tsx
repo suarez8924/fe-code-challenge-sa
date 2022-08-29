@@ -32,6 +32,7 @@ const Search = ({
   return (
     <form className={`search ${className}`} aria-label={ariaLabel}>
       <input
+        data-testid="input"
         className="search-input"
         type="text"
         value={searchValue}
@@ -39,6 +40,7 @@ const Search = ({
         placeholder={placeholder}
       />
       <button
+        data-testid="search-button"
         className="search-button"
         type="button"
         onClick={handleClick}

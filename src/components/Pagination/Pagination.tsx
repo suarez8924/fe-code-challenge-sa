@@ -35,6 +35,7 @@ const Pagination = ({
     <nav className={`pagination ${className}`}>
       {currentPage > 1 && (
         <button
+          data-testid="left-button"
           className="pagination-button previous-button"
           disabled={disabled}
           onClick={() => {
@@ -45,11 +46,12 @@ const Pagination = ({
           <ChevronLeft />
         </button>
       )}
-      <p>
+      <p data-testid="page-count-display">
         {currentPage} of {totalPages}
       </p>
       {currentPage < totalPages && (
         <button
+          data-testid="right-button"
           className="pagination-button next-button"
           disabled={disabled}
           onClick={() => {

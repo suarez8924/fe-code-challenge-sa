@@ -26,7 +26,7 @@ const useFetchRepositories = ({
         .then((data) => {
           const { items, total_count: totalCount } = data;
           const stargazedRepositoriesIds = getStargazedRepositories();
-          console.log(data);
+
           const newRepositories = items.map(
             ({
               id,
