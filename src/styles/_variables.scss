@@ -1,0 +1,22 @@
+// Colors
+$colorWhite: #fff;
+$colorBlack: #000;
+$colorOrange: #eb5e28;
+$colorDarkGrey: #252422;
+$colorCream: #ccc5b9;
+$colorAlmostWhite: #fffcf2;
+
+// Site side paddings
+$mobileSidePadding: 2rem;
+$desktopSidePadding: 4rem;
+
+// Site max widths
+$maxMobileWidth: 76.8rem;
+$maxDesktopWidth: 144rem;
+
+// Media queries
+$screenSmall: "(min-width: 480px)";
+$screenMaxMedium: "(max-width: 767px)";
+$screenMedium: "(min-width: 768px)";
+$screenMaxLarge: "(max-width: 1023px)";
+$screenLarge: "(min-width: 1024px)";

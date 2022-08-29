@@ -1,0 +1,49 @@
+@import "./styles/variables";
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $colorAlmostWhite;
+  min-height: 100vh;
+  color: $colorDarkGrey;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: 100%;
+  margin: 4rem 0;
+
+  .main-title {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    text-transform: uppercase;
+    align-self: center;
+  }
+
+  .pagination {
+    grid-column: 2/-1;
+    grid-row: 1/2;
+    margin-left: 4rem;
+    flex-shrink: 0;
+    justify-content: end;
+  }
+
+  .language-search {
+    grid-column: 1/-1;
+    grid-row: 2/-1;
+    margin-top: 2rem;
+  }
+}
+
+.loader {
+  margin-top: 30vh;
+}

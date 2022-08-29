@@ -1,0 +1,40 @@
+@import "../../styles/variables";
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $colorDarkGrey;
+
+  .pagination-button {
+    width: 2rem;
+    transition: opacity 150ms ease-in-out;
+
+    &[disabled] {
+      opacity: 0.2;
+    }
+
+    svg {
+      fill: $colorDarkGrey;
+      transition: fill 150ms ease-in-out;
+    }
+
+    &:hover {
+      &:not([disabled]) {
+        cursor: pointer;
+
+        svg {
+          fill: $colorOrange;
+        }
+      }
+    }
+  }
+
+  .next-button {
+    margin-left: 2rem;
+  }
+
+  .previous-button {
+    margin-right: 2rem;
+  }
+}

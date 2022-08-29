@@ -1,0 +1,80 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.repository-details {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: 1fr 1fr;
+  justify-content: center;
+  grid-template-areas:
+    "repository-details repository-details repository-details language"
+    "repository-details repository-details repository-details stars";
+  background-color: $colorDarkGrey;
+  padding: 2rem;
+  border-radius: 1rem;
+  min-height: 13rem;
+  color: $colorAlmostWhite;
+
+  .details-container {
+    grid-area: repository-details;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .description {
+    margin: 1rem 0 2rem;
+  }
+
+  .github-icon {
+    width: 3rem;
+    fill: $colorAlmostWhite;
+    transition: fill 200ms ease-out;
+  }
+
+  .repository-link {
+    margin-top: auto;
+    &:hover {
+      .github-icon {
+        fill: $colorOrange;
+      }
+    }
+  }
+
+  .language {
+    justify-self: end;
+    color: $colorOrange;
+  }
+
+  .stars-container {
+    grid-area: stars;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .star-button {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .star-icon {
+    width: 2.5rem;
+    transition: fill 300ms ease-out;
+    fill: transparent;
+    stroke: $colorAlmostWhite;
+    stroke-width: 2rem;
+
+    &.is-stargazed {
+      fill: $colorOrange;
+      stroke-width: 0;
+      stroke: transparent;
+    }
+  }
+
+  .star-count {
+    margin-left: 1rem;
+    text-align: center;
+  }
+}
